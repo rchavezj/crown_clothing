@@ -1,8 +1,10 @@
 
-
+Github Control Commands<br />
+################################################<br />
+git clone (clone-url-page)
 git remote --> checkout the branches<br />
-git remote remove origin -->
-git remote add (ssh origin url from github repo)
+git remote remove origin --> remove the previous owner from the repo to push onto your own<br />
+git remote add (ssh origin url from github repo)<br />
 
 
 
