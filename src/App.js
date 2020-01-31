@@ -21,6 +21,11 @@ const TopicsList = (props) => {
   console.log(props);
   return (
     <div>
+      <button onClick={
+        () => props.history.push('/')
+      }>
+        Home
+      </button>
       <h1>Topic List Page</h1>
     </div>
   );
