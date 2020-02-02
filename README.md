@@ -1,7 +1,7 @@
 
 # E-Commers React-JS GraphQL Project
 
-<strong> Goal</strong>: Create a full stack React JS project to gain a solid foundation in full stack to later intergrate custom machine learning API's to display. </br>
+<strong> Goal</strong>: Create a full stack React JS project to gain a solid foundation in full stack to later intergrate custom API's to display. </br>
 ![alt text](https://github.com/rchavezj/crown_clothing/blob/master/cover.png)
 
 Github Control Commands<br />
