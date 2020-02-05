@@ -3,10 +3,6 @@ import React from 'react';
 import './collection-item.styles.scss';
 
 const CollectionItem = (props) => {
-    console.log(`============`);
-    console.log(`url(.${props.imageUrl})`);
-    console.log(`============`);
-    console.log(`\n`);
     return(
         <div className='collection-item'>
             <div

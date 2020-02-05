@@ -29,3 +29,10 @@ React Router: Single page application (SPA)<br />
 yarn add react-router-dom<br />
 npm install react-router-dom
 
+
+
+
+Firebase<br />
+################################################<br />
+npm add firebase - compile errors
+yarn add firebase - works!

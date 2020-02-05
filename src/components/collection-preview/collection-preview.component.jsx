@@ -12,12 +12,12 @@ const CollectionPreview = (props) => {
             .map(
               ({id, ...otherProps}) => (
                 <CollectionItem key={id} {...otherProps}/> 
-              )
-            )
+              ) 
+            ) 
           }</div>
       </div>
-    );
-};
+    )
+}
 
 
 export default CollectionPreview;
