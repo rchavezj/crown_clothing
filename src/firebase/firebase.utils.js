@@ -14,17 +14,22 @@ const config = {
 };
 
 
-// 
 export const createUserProfileDocument = async (userAuth, additionalData) => {
   if(!userAuth) return;
-
+  // Retrieve the user's reference id inside the database
   const userRef = firestore.doc(`users/${userAuth.uid}`);
-  const snapshot = await userRef.get();
-
-  if (!snapshot.exists) {
+  // Similar to collectionReference except used to retrieve data. 
+  const snapShot = await userRef.get();
+  // If snapChot data does not 
+  // exist for the user, we want to 
+  // create a piece of data 
+  // using userRef.documentRef Object
+  if (!snapShot.exists) {
+    // destruct the userAuth properties for displayName and email
     const { displayName, email } = userAuth;
+    // Log the date
     const createdAt = new Date();
-
+    
     try{
       await userRef.set({
         displayName, 
@@ -38,6 +43,8 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   }
   return userRef;
 }
+
+
 
 firebase.initializeApp(config);
 

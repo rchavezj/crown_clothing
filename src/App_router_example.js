@@ -54,6 +54,25 @@ function App() {
 
 export default App;
 
+///////////// Needs to be inside a class component. not a functional component. ///////////
+// handleClick = () => {
+//   // The first argument can either be (1) an object with
+//   // {meaningOfLife: this.state.meaningOfLife} which is bad
+//   // practice for lack of latest version updated in another location
+//   // Or (2) the first argument can be a function coded below, second argument
+//   // retrives data asynchronously from the first argument. prevProps is a
+//   // prop provided from index.js passed down to it's child App.js to increment.
+//   this.setState(
+//     (prevState, prevProps) => {
+//       return { meaningOfLife: prevState.meaningOfLife + prevProps.increment };
+//     },
+//     () => console.log(this.state.meaningOfLife)
+//   );
+// };
+///////////// Needs to be inside a class component. not a functional component. ///////////
+
+
+
 // function App() {
 //   return (
 //     <div>

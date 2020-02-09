@@ -34,5 +34,5 @@ npm install react-router-dom
 
 Firebase<br />
 ################################################<br />
-npm add firebase - compile errors
+npm add firebase - compile errors<br />
 yarn add firebase - works!

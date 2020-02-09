@@ -3,6 +3,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
+// import { auth } from "./firebase/firebase.utils";
 
 import ShopPage from './pages/shop/shop.component';
 import Header from "./components/header/header.component";
@@ -12,45 +13,58 @@ import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up
 
 
 class App extends React.Component {
-  constructor(){
+  constructor() {
     super();
 
     this.state = {
       currentUser: null
-    }
+    };
   }
 
   unsubscribeFromAuth = null;
 
   componentDidMount() {
-    this.unsubscribeFromAuth = auth.onAuthStateChanged( 
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(
       async userAuth => {
-        // Check if databas has been updated
+        // Check if the userAuth
+        // exist within the database
         if (userAuth) {
+          // Check if the snapShot has updated
+          // I.N.O Check if the database, at the ref, is updated with new data
           const userRef = await createUserProfileDocument(userAuth);
-          // User Database
+          // The moment userRef instantiate, it will
+          // send us a snapshot object, representing the data
+          // related to the user we possibly stored on our database
           userRef.onSnapshot(
+            // Object above (userRef) is where we're going to get the data
+            // related to this user that we just possibly stored.
             snapShot => {
+              console.log(snapShot);
               this.setState({
                 currentUser: {
                   id: snapShot.id,
                   ...snapShot.data()
                 }
-              })
+              },
+              // Asynchrosly console
+              // log currentUser data. 
+              () => {
+                  console.log(this.state);
+                }
+              );
             }
           );
-          //console.log(this.state);
         }
         this.setState({ currentUser: userAuth });
       }
     );
   }
 
-  componentWillUnmount(){
+  componentWillUnmount() {
     this.unsubscribeFromAuth();
   }
 
-  render(){
+  render() {
     return (
       <div>
         <Header currentUser={this.state.currentUser} />
