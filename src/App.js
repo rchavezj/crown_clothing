@@ -28,7 +28,7 @@ class App extends React.Component {
         // exist within the database
         if (userAuth) {
           // Check if the snapShot has updated
-          // I.N.O Check if the database, at the ref, is updated with new data
+          // I.N.W Check if the database, at the ref, is updated with new data
           const userRef = await createUserProfileDocument(userAuth);
           // The moment userRef instantiate, it will
           // send us a snapshot object, representing the data

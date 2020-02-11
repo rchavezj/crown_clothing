@@ -16,7 +16,7 @@ git remote add (ssh origin url from github repo)<br />
 
 SCSS (SASS)<br />
 ################################################<br />
-(1) NPM for SASS<br />
+(1) YaRN for SASS<br />
 yarn add node-sass
 
 (2) Make sure to follow the 7-1 SASS architecture rules
@@ -36,3 +36,9 @@ Firebase<br />
 ################################################<br />
 npm add firebase - compile errors<br />
 yarn add firebase - works!
+
+
+
+Redux <br />
+################################################<br />
+yarn add redux redux-logger react-redux
