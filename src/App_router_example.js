@@ -30,6 +30,7 @@ const TopicsList = (props) => {
     </div>
   );
 };
+
 const TopicDetail = (props) => {
   console.log(props);
   return (
