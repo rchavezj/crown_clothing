@@ -3,21 +3,23 @@ import App from './App';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 
-// ReactDOM.render(
-//   <Provider>
-//     <BrowserRouter>
-//       <App />
-//     </BrowserRouter>
-//   </Provider>,
-//   document.getElementById("root")
-// );
+import store from "./redux/store";
+import { Provider } from "react-redux";
 
 ReactDOM.render(
+  <Provider store={store}>
     <BrowserRouter>
       <App />
-    </BrowserRouter>,
+    </BrowserRouter>
+  </Provider>,
   document.getElementById("root")
 );
+
+// ReactDOM.render(
+//     <BrowserRouter>
+//       <App />
+//     </BrowserRouter>,
+//   document.getElementById("root")
+// );
