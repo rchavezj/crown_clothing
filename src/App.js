@@ -18,7 +18,7 @@ class App extends React.Component {
 
   componentDidMount() {
 
-    const {setCurrentUser} = this.props
+    const {setCurrentUser} = this.props;
 
 
     this.unsubscribeFromAuth = auth.onAuthStateChanged(
@@ -36,11 +36,13 @@ class App extends React.Component {
             // Object above (userRef) is where we're going to get the data
             // related to this user that we just possibly stored.
             snapShot => {
-              // console.log(snapShot);
-              setCurrentUser({
-                id: snapShot.id,
-                ...snapShot.data()
-              });
+              console.log(snapShot);
+              setCurrentUser(
+                {
+                  id: snapShot.id,
+                  ...snapShot.data()
+                }
+              )
               // console.log(setCurrentUser);
             }
           );
