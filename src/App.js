@@ -79,7 +79,7 @@ const RedirectToHomePageSignIn = ({ currentUser  }) => (
     exact
     path="/signin"
     render={
-      () => currentUser ? <Redirect to="/" /> : <SignInAndSignUpPage />
+      () => (currentUser ? <Redirect to="/" /> : <SignInAndSignUpPage />)
     }
   />
 );
