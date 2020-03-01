@@ -1,9 +1,12 @@
 import './App.css';
 import React from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom';
 
 import { connect } from "react-redux";
+import { createStructuredSelector } from 'reselect';
+import { Route, Switch, Redirect } from 'react-router-dom';
+
 import { setCurrentUser } from "./redux/user/user.actions";
+import { selectCurrentUser } from './redux/user/user.selectors';
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 
 import ShopPage from './pages/shop/shop.component';
@@ -86,8 +89,8 @@ const RedirectToHomePageSignIn = ({ currentUser  }) => (
 
 
 
-const mapStateToProps = ({ user }) => ({
-  currentUser: user.currentUser
+const mapStateToProps = createStructuredSelector ({
+  currentUser: selectCurrentUser
 });
 
 const mapDispatchToProps = dispatch => ({
