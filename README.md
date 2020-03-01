@@ -40,3 +40,8 @@ yarn add firebase - works!<br />
 Redux <br />
 ################################################<br />
 yarn add redux redux-logger react-redux
+
+
+Reslect <br />
+################################################<br />
+yarn add reselect
