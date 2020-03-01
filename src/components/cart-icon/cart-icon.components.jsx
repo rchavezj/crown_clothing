@@ -11,7 +11,7 @@ import './cart-icon.styles.scss';
 const CartIcon = (props) => (
     <div className='cart-icon' onClick={props.toggleCartHidden}>
         <ShoppingIcon className='shopping-icon' />
-        <span className='item-count'>0</span>
+        <span className='item-count'>{props.itemCount}</span>
     </div>
 );
 
@@ -19,5 +19,10 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     toggleCartHidden: () => dispatch(toggleCartHidden())
 });
 
+const mapStateToProps = ({ cart: { cartItems } }) => ({
+  itemCount: cartItems.reduce(
+    (accumalatedQuantity, cartItem) => accumalatedQuantity + cartItem.quantity,  0
+  )
+});
 
-export default connect(null, mapDispatchToProps)(CartIcon);
+export default connect(mapStateToProps, mapDispatchToProps)(CartIcon);
