@@ -8,14 +8,23 @@ import CartItem from '../cart-item/cart-item.component';
 
 import { selectCartItems } from '../../redux/cart/cart.selectors';
 
+import { toggleCartHidden } from "../../redux/cart/cart.actions";
+
 import './cart-dropdown.styles.scss';
 
-const CartDropdown = ({ cartItems, history }) => (
+const CartDropdown = ({ cartItems, history, dispatch }) => (
   <div className="cart-dropdown">
     <div className="cart-items">
       {<CartItemTernaryList cartItems={cartItems} />}
     </div>
-    <CustomButton onClick={() => history.push('/checkout')}>Go to checkout</CustomButton>
+    <CustomButton 
+      onClick={() => {
+        history.push('/checkout');
+        dispatch(toggleCartHidden()); 
+      }}
+    >
+      Go to checkout
+    </CustomButton>
   </div>
 );
 
@@ -24,20 +33,15 @@ const CartDropdown = ({ cartItems, history }) => (
 
 const CartItemTernaryList = ({ cartItems }) =>(
     cartItems.length ? <CartItemList cartItems={cartItems} /> : <CartItemEmpty />
-);
+); 
 const CartItemList = ({ cartItems }) => (
     cartItems.map(
         cartItem => (
-            <CartItem 
-                item={cartItem} 
-                key={cartItem.id} 
-            />
+            <CartItem key={cartItem.id} item={cartItem} />
         )
     )
-);
-const CartItemEmpty = () => (
-  <span className="empty-message"> Your cart is empty</span>
-);
+); 
+const CartItemEmpty = () => ( <span className="empty-message"> Your cart is empty</span> );
 
 
 
