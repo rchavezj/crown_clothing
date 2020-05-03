@@ -6,6 +6,11 @@ import storage from 'redux-persist/lib/storage';
 import userReducer from "./user/user.reducer";
 import cartReducer from "./cart/cart.reducer";
 
+
+// Techniqually we can have a whitelist for 
+// whitelist: ['user', 'cart'] but 'user' is only 
+// being used for firebase with no reducers. 'cart'
+// uses the redux functionality. 
 const persistConfig = {
     key: 'root',
     storage,
