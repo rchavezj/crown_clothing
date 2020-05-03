@@ -8,10 +8,14 @@ import { BrowserRouter } from 'react-router-dom';
 import store from "./redux/store";
 import { Provider } from "react-redux";
 
+import { PersistGate } from 'redux-persist/integration/react';
+
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
-      <App />
+      <PersistGate>
+        <App />
+      </PersistGate>
     </BrowserRouter>
   </Provider>,
   document.getElementById("root")

@@ -7,6 +7,7 @@ import { clearItemFromCart, addItem, removeItem } from '../../redux/cart/cart.ac
 
 
 const CheckoutItem = ({ clearItem, cartItem, addItem, removeItem }) => {
+    
     const { name, imageUrl, quantity, price } = cartItem;
 
     return(
