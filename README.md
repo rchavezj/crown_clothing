@@ -5,7 +5,6 @@
 ![alt text](https://github.com/rchavezj/crown_clothing/blob/master/cover.png)
 
 Github Control Commands<br />
-################################################<br />
 ```console
 git clone (clone-url-page)
 git remote --> checkout the branches<br />
@@ -16,7 +15,6 @@ git remote add (ssh origin url from github repo)<br />
 
 
 SCSS (SASS)<br />
-################################################<br />
 (1) YaRN for SASS<br />
 ```console
 yarn add node-sass
@@ -27,7 +25,6 @@ yarn add node-sass
 
 
 React Router: Single page application (SPA)<br />
-################################################<br />
 (3) NPM for React router<br />
 ```console
 yarn add react-router-dom<br />
@@ -36,20 +33,17 @@ yarn add react-router-dom<br />
 
 
 Firebase<br />
-################################################<br />
 ```console
 yarn add firebase - works!<br />
 ```
 
 
 Redux <br />
-################################################<br />
 ```console
 yarn add redux redux-logger react-redux
 ```
 
 Reslect <br />
-################################################<br />
 ```console
 yarn add reselect
 ```
